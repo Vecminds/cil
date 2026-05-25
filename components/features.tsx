@@ -4,38 +4,38 @@ import { Plug, Workflow, Sparkles, Bolt, Shield, Eye } from "./icons";
 const feats: { ic: ReactNode; t: string; b: string; tag: string }[] = [
   {
     ic: <Plug />,
-    t: "Connectors, not migrations",
-    b: "100+ ready connectors for core banking, policy admin, case management and document stores. Bring your data; leave it where it is.",
-    tag: "DATA / OUT-OF-THE-BOX",
+    t: "Document ingestion, any format",
+    b: "PDFs, scanned images, bank exports, e-statements. Any document a borrower submits is ingested and structured automatically — no pre-processing required.",
+    tag: "INGESTION",
   },
   {
     ic: <Workflow />,
-    t: "Policy as code",
-    b: "Express your risk rules, regulatory checks and underwriting criteria in plain YAML. Version them. Test them. Roll back.",
-    tag: "GOVERNANCE",
+    t: "Income computation",
+    b: "Gross, net and variable income reconciled across pay stubs, bank deposit history and tax returns. One verified figure, with every source cited.",
+    tag: "VERIFICATION",
   },
   {
     ic: <Sparkles />,
-    t: "Reasoning, not just scores",
-    b: "Every decision returns the evidence, the rules it tripped, and a natural-language summary an analyst can paste into a memo.",
-    tag: "EXPLAINABILITY",
+    t: "Discrepancy detection",
+    b: "Inconsistencies between documents surfaced with the exact figures that don't align — not just a flag, but the specific pay stub line versus the bank deposit that disagrees.",
+    tag: "ACCURACY",
   },
   {
     ic: <Bolt />,
-    t: "Sub-second at scale",
-    b: "Median latency under 300ms at p95. Streamed responses for long-running case reviews. Designed for production traffic.",
-    tag: "PERFORMANCE",
+    t: "Fraud signal detection",
+    b: "Document-level patterns that correlate with default and fraud — learned from outcomes across every file the system has processed, not from a static rule list.",
+    tag: "RISK",
   },
   {
     ic: <Shield />,
-    t: "Sovereign by default",
-    b: "On-prem, VPC or private cloud. SOC 2 Type II, ISO 27001, GDPR. No customer data leaves your environment.",
-    tag: "SECURITY",
+    t: "The outcome flywheel",
+    b: "Oloid observes how each file it processes actually performs over time. Every loan makes the next document review sharper in a way no off-the-shelf model — or competitor — can replicate.",
+    tag: "MOAT",
   },
   {
     ic: <Eye />,
-    t: "Decision observability",
-    b: "A timeline of every call, every input, every reason. Replay any historical decision against today's policies.",
+    t: "Full audit trail",
+    b: "A complete, replayable record of every document reviewed, every figure computed, every signal raised. When the examiner asks, every step is there.",
     tag: "AUDIT",
   },
 ];
@@ -47,11 +47,11 @@ export default function Features() {
         <div className="section-head reveal">
           <span className="kicker mono">Capabilities</span>
           <h2>
-            Built for teams that <span className="em">own</span> the decision.
+            Built for the work that happens <span className="em">before</span> the decision.
           </h2>
           <p>
-            The intelligence layer ships with the primitives risk, compliance and underwriting teams have asked
-            for, for the better part of a decade.
+            The intelligence layer does the reading, reconciling and flagging — so your underwriters spend
+            their time on judgment, not on chasing figures across a document pile.
           </p>
         </div>
         <div className="feat-grid">

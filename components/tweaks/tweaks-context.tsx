@@ -11,7 +11,7 @@ export type TweakValues = {
 
 const TWEAK_DEFAULTS: TweakValues = /*EDITMODE-BEGIN*/{
   "theme": "light",
-  "headline": "The intelligence layer for systems that already exist.",
+  "headline": "The verified credit file that used to take days — ready in minutes.",
   "accent": "mono",
   "showIndustries": true
 }/*EDITMODE-END*/;

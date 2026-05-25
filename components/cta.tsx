@@ -6,12 +6,12 @@ export default function CTA() {
       <div className="container">
         <div className="cta reveal">
           <h2>
-            Stop sending decisions to <span className="em">committees</span>. Start sending them through a
-            layer.
+            Stop handing your underwriters a <span className="em">pile</span>. Start handing them a verified
+            file.
           </h2>
           <p>
-            A 30-minute walkthrough with our team. Bring a real decision flow you&apos;d like to scope; leave
-            with a working prototype within two weeks.
+            A 30-minute walkthrough with our team. Bring a real document flow you&apos;d like to scope; leave
+            with a working prototype that turns your borrower pile into a clean credit file within two weeks.
           </p>
           <div className="cta-actions">
             <a href="#" className="btn primary lg">

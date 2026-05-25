@@ -7,21 +7,23 @@ export default function Solution() {
         <div className="section-head reveal">
           <span className="kicker mono">The platform</span>
           <h2>
-            One API. Every decision, <span className="em">explained</span>.
+            One integration. A verified file in <span className="em">minutes</span>.
           </h2>
           <p>
-            Point Oloid at the systems you already have. Get back a score, a reason, and a paper trail — in
-            the time it takes your form to submit.
+            Connect Oloid to your LOS and document store. Submit the borrower&apos;s package as-is. Receive a
+            clean, structured credit file — income computed, discrepancies reconciled, fraud signals flagged —
+            ready for your underwriter to act on.
           </p>
         </div>
 
         <div className="solution">
           <div className="reveal">
-            <h2 style={{ marginBottom: 14 }}>Drop in. Don&apos;t rip out.</h2>
+            <h2 style={{ marginBottom: 14 }}>We prepare the file. You make the call.</h2>
             <p>
-              Oloid Intelligence is built to live alongside your core systems. We read from your existing data
-              sources, run our reasoning pipeline, and return a structured decision your team can act on — or
-              your apps can render directly.
+              Oloid sits on top of your existing loan-origination system — not in place of it. We ingest
+              documents as they arrive, do the reading and reconciliation, and hand the underwriter a verified
+              file with every figure sourced and every discrepancy surfaced. The lending decision stays with
+              your team.
             </p>
             <ul className="solution-bullets">
               <li>
@@ -29,8 +31,8 @@ export default function Solution() {
                   <Check />
                 </span>
                 <span>
-                  <strong>Three-line integration.</strong>{" "}
-                  <span className="label">Stateless REST + SDKs for Python, TS, Java, .NET.</span>
+                  <strong>Drops into your LOS.</strong>{" "}
+                  <span className="label">Read-only connector. No rip-and-replace. Live in days.</span>
                 </span>
               </li>
               <li>
@@ -38,9 +40,9 @@ export default function Solution() {
                   <Check />
                 </span>
                 <span>
-                  <strong>Reasoning attached.</strong>{" "}
+                  <strong>Structured output.</strong>{" "}
                   <span className="label">
-                    Every output ships with the rules, sources and confidence behind it.
+                    Verified income, reconciled figures, and flagged signals your UI can render directly.
                   </span>
                 </span>
               </li>
@@ -49,8 +51,8 @@ export default function Solution() {
                   <Check />
                 </span>
                 <span>
-                  <strong>Your perimeter.</strong>{" "}
-                  <span className="label">VPC, on-prem, or private cloud. Your data never leaves.</span>
+                  <strong>Outcome-trained.</strong>{" "}
+                  <span className="label">Every loan it touches feeds the flywheel — next file is sharper.</span>
                 </span>
               </li>
               <li>
@@ -58,8 +60,8 @@ export default function Solution() {
                   <Check />
                 </span>
                 <span>
-                  <strong>Built to audit.</strong>{" "}
-                  <span className="label">Immutable decision log. SOC 2, ISO 27001, GDPR.</span>
+                  <strong>Regulator-ready.</strong>{" "}
+                  <span className="label">Full audit log. Every figure sourced. Every step replayable.</span>
                 </span>
               </li>
             </ul>
@@ -68,8 +70,8 @@ export default function Solution() {
           <div className="api-card reveal" data-delay="2">
             <div className="head">
               <span className="method">POST</span>
-              <span>/v2/intelligence/score</span>
-              <span style={{ marginLeft: "auto" }}>aml.review</span>
+              <span>/v2/intelligence/verify</span>
+              <span style={{ marginLeft: "auto" }}>document.credit_file</span>
             </div>
             <pre>
               {`{\n  `}
@@ -77,38 +79,28 @@ export default function Solution() {
               {`: { `}
               <span className="k">&quot;id&quot;</span>
               {`: `}
-              <span className="s">&quot;acct_9F4A2&quot;</span>
-              {`, `}
-              <span className="k">&quot;type&quot;</span>
-              {`: `}
-              <span className="s">&quot;transaction&quot;</span>
+              <span className="s">&quot;app_7C3B1&quot;</span>
               {` },\n  `}
-              <span className="k">&quot;context&quot;</span>
-              {`: { `}
-              <span className="k">&quot;amount&quot;</span>
-              {`: `}
-              <span className="n">184500</span>
-              {`, `}
-              <span className="k">&quot;region&quot;</span>
-              {`: `}
-              <span className="s">&quot;EU&quot;</span>
-              {` },\n  `}
-              <span className="k">&quot;policies&quot;</span>
+              <span className="k">&quot;documents&quot;</span>
               {`: [`}
-              <span className="s">&quot;aml-eu-2024&quot;</span>
-              {`, `}
-              <span className="k">&quot;explain&quot;</span>
+              <span className="s">&quot;pay_stub_aug.pdf&quot;</span>
+              {`,\n             `}
+              <span className="s">&quot;bank_stmt_q3.pdf&quot;</span>
+              {`,\n             `}
+              <span className="s">&quot;1040_2023.pdf&quot;</span>
+              {`],\n  `}
+              <span className="k">&quot;policy&quot;</span>
               {`: `}
-              <span className="n">true</span>
-              {`]\n}`}
+              <span className="s">&quot;income.verify-2024&quot;</span>
+              {`\n}`}
             </pre>
             <div className="foot">
               <span>
-                ↳ <span style={{ color: "var(--fg)" }}>247ms</span>
+                ↳ <span style={{ color: "var(--fg)" }}>2.1s</span>
               </span>
               <span className="verdict">
-                <span className="pill">escalate</span>
-                <span>· 3 reasons attached</span>
+                <span className="pill">verified</span>
+                <span>· $84,200 income · 1 discrepancy</span>
               </span>
             </div>
           </div>

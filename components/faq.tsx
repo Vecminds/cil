@@ -5,28 +5,28 @@ import { Plus } from "./icons";
 
 const items = [
   {
-    q: "Do we have to replace our existing systems?",
-    a: "No. Oloid is explicitly designed as an intelligence layer on top of what you already run. We connect to your core banking, policy admin, case management or document stores read-only, and return structured decisions your existing UI or workflow can consume.",
+    q: "Do you make the lending decision?",
+    a: "No. Oloid prepares the verified credit file — income computed, discrepancies surfaced, fraud signals flagged. The lending decision stays entirely with your underwriter. We augment the human; we don't replace them.",
   },
   {
-    q: "How do you handle data residency and privacy?",
-    a: "Oloid can be deployed on-premise, in your VPC, or in a region-locked private cloud. Customer data never leaves your environment. We're SOC 2 Type II, ISO 27001 and GDPR compliant, and we publish a DPA on request.",
+    q: "What document types can you process?",
+    a: "Pay stubs, W-2s, 1040s, bank statements (PDF or export), business financial statements, profit-and-loss reports, rent rolls, and most other borrower documents. If a document type is new to us, it typically takes one to two weeks to add structured extraction for it.",
   },
   {
-    q: 'What does "explainable" actually mean here?',
-    a: "Every decision Oloid returns carries the policy rules it evaluated, the specific data inputs it used, a confidence score, and a natural-language summary. Auditors and regulators can replay any historical call against the policy version in force at that time.",
+    q: "How does the outcome flywheel actually work?",
+    a: "Oloid observes how each file it processes performs over time — whether the borrower repays, where early-payment-default clusters, which document signals predicted fraud. That signal is fed back into the extraction and flagging models. Every loan the system touches makes the next document review sharper. No competitor using an off-the-shelf model has access to your outcome data.",
   },
   {
-    q: "How fast is a typical integration?",
-    a: "Most pilots are scoped to two weeks: one to connect data sources and encode a first policy set, one to validate decisions against your historical ground truth. Production rollouts typically follow within 30–60 days.",
+    q: "How do you detect document fraud?",
+    a: "We look for document-level signals: metadata inconsistencies, font and formatting anomalies, figures that are internally inconsistent, and patterns learned from files that went into default. Fraud signals are surfaced as specific observations — not just a score — so your underwriter can assess them.",
   },
   {
-    q: "Is this an LLM wrapper?",
-    a: "No. Oloid is a hybrid pipeline — deterministic policy evaluation, statistical models, and large-language reasoning each used for what they're good at. Output reasoning always cites the rule that triggered it, never the prompt that produced it.",
+    q: "How do we integrate with our existing LOS?",
+    a: "A read-only connector to your LOS and document store. We support most major platforms out of the box; our SDK handles the rest. Most teams are ingesting live documents within a week of starting a pilot, without touching their existing workflow.",
   },
   {
-    q: "What does pricing look like?",
-    a: "Annual platform license plus per-decision metering, with volume tiers. We share commercial details after a 30-minute discovery call so we can scope the right deployment shape for your team.",
+    q: "How is borrower data protected?",
+    a: "Oloid can be deployed on-premise, in your VPC, or in a region-locked private cloud. Borrower documents never leave your environment. We are SOC 2 Type II, ISO 27001 and GDPR compliant, and publish a DPA on request.",
   },
 ];
 

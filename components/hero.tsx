@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="reveal">
           <span className="eyebrow">
             <span className="dot" />
-            <span className="mono">v2 — now with reasoning traces</span>
+            <span className="mono">Document intelligence · Outcome-trained · Audit-ready</span>
           </span>
         </div>
         <h1 className="reveal" data-delay="1">
@@ -29,9 +29,10 @@ export default function Hero() {
           )}
         </h1>
         <p className="sub reveal" data-delay="2">
-          Oloid Intelligence sits on top of your legacy stack — not in place of it — and gives every record,
-          claim or case a fast, explainable decision. One API. Built for credit, compliance, AML and insurance
-          teams who move at the speed of regulation.
+          Oloid sits on top of your existing loan-origination system and ingests the borrower&apos;s documents
+          — pay stubs, bank statements, tax returns, financial statements — turning them into a clean, structured,
+          verified credit file in minutes. Income computed. Discrepancies reconciled. Fraud signals flagged.
+          Your underwriter decides. Every step is explainable and auditable for the regulator.
         </p>
         <div className="hero-cta reveal" data-delay="2">
           <a href="#cta" className="btn primary lg">
@@ -46,19 +47,19 @@ export default function Hero() {
             <span className="check">
               <Check style={{ verticalAlign: "-2px" }} />
             </span>{" "}
-            SOC 2 Type II
+            Sits on top of your existing LOS
           </span>
           <span>
             <span className="check">
               <Check style={{ verticalAlign: "-2px" }} />
             </span>{" "}
-            Deployed on-prem or in your VPC
+            We prepare the file — you make the decision
           </span>
           <span>
             <span className="check">
               <Check style={{ verticalAlign: "-2px" }} />
             </span>{" "}
-            Every decision is explainable
+            Every step explainable &amp; auditable
           </span>
         </div>
         <HeroVisual />

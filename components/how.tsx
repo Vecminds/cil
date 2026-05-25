@@ -4,49 +4,49 @@ import Row from "./row";
 const steps: { n: string; t: string; b: string; vis: ReactNode }[] = [
   {
     n: "01",
-    t: "Connect your systems",
-    b: "Use a connector or our SDK to expose the records you want Oloid to reason about. Read-only by default.",
+    t: "Connect your LOS and document store",
+    b: "A read-only connector to your loan-origination system. Documents flow in as borrowers submit them — no pre-processing, no reformatting, no workflow changes.",
     vis: (
       <div style={{ display: "grid", gap: 6, width: "100%" }}>
-        <Row label="core_banking.accounts" tone="muted" />
-        <Row label="case_mgmt.claims" tone="muted" />
-        <Row label="docs.policies.pdf" tone="muted" />
+        <Row label="los.application.fields" tone="muted" />
+        <Row label="docs.pay_stub_aug.pdf" tone="muted" />
+        <Row label="docs.bank_stmt_q3.pdf" tone="muted" />
       </div>
     ),
   },
   {
     n: "02",
-    t: "Encode your policies",
-    b: "Write the rules your regulators and risk committee already approved — once. Oloid handles versioning.",
+    t: "Submit the document package",
+    b: "Pass the borrower's documents to the API as-is. Pay stubs, bank statements, tax returns — Oloid reads them so your team doesn't have to.",
     vis: (
       <pre
         className="mono"
         style={{ margin: 0, fontSize: 11, color: "var(--muted)", lineHeight: 1.6, textAlign: "left", whiteSpace: "pre" }}
       >
-        {`policy: aml.eu.high_value\nwhen: amount > 100_000\n  AND region in [SDN, IRN]\nthen: escalate\n  reason: "Sanctions exposure"`}
+        {`POST /verify\ndocuments: [\n  "pay_stub_aug.pdf",\n  "bank_stmt_q3.pdf",\n  "1040_2023.pdf"\n]`}
       </pre>
     ),
   },
   {
     n: "03",
-    t: "Call the API",
-    b: "Send any record, claim or case. Get back a structured decision, a confidence, and the reasoning trail.",
+    t: "Receive the verified credit file",
+    b: "Income computed. Discrepancies reconciled. Fraud signals raised. A clean, structured file — with every figure sourced — lands in your underwriting UI.",
     vis: (
       <div className="mono" style={{ fontSize: 11, color: "var(--muted)", textAlign: "center" }}>
-        <div style={{ color: "var(--fg)" }}>POST /score</div>
-        <div style={{ marginTop: 6 }}>↳ 247ms · escalate</div>
+        <div style={{ color: "var(--fg)" }}>↳ 2.1s · verified</div>
+        <div style={{ marginTop: 6 }}>income $84,200 · 1 discrepancy</div>
       </div>
     ),
   },
   {
     n: "04",
-    t: "Act, and audit",
-    b: "Render decisions in your existing apps. Every call is logged, replayable, and reviewable on demand.",
+    t: "Underwriter decides. Outcome feeds the flywheel.",
+    b: "Your underwriter acts on a clean file, not a pile. How the loan performs comes back to the system — sharpening fraud signals and income patterns for every file that follows.",
     vis: (
       <div style={{ display: "grid", gap: 6, width: "100%" }}>
-        <Row label="2024-08-14  approve  ✓" tone="ok" />
-        <Row label="2024-08-14  escalate  ⓘ" tone="warn" />
-        <Row label="2024-08-13  approve  ✓" tone="ok" />
+        <Row label="2024-08-14  verified  ✓  approved" tone="ok" />
+        <Row label="2024-08-14  verified  ⓘ  1 discrepancy" tone="warn" />
+        <Row label="2024-08-13  verified  ✓  approved" tone="ok" />
       </div>
     ),
   },
@@ -61,7 +61,7 @@ export default function How() {
           <h2>
             Production-ready in <span className="em">four</span> steps.
           </h2>
-          <p>Most teams ship their first Oloid-backed decision flow inside a two-week pilot.</p>
+          <p>Most lending teams have their first document flow verified by Oloid within a two-week pilot.</p>
         </div>
         <div className="steps">
           {steps.map((s, i) => (

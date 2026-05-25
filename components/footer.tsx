@@ -8,22 +8,22 @@ export default function Footer() {
               <span className="mark" aria-hidden="true" />
               Oloid Intelligence
             </div>
-            <p>The intelligence layer for regulated industries. Read your systems. Reason. Decide. Audit.</p>
+            <p>The document intelligence layer for lenders. Verified files in minutes. Every step auditable.</p>
           </div>
           <div className="foot-col">
             <h4>Platform</h4>
             <a href="#">Overview</a>
-            <a href="#">Connectors</a>
-            <a href="#">Policy DSL</a>
-            <a href="#">Decision API</a>
+            <a href="#">Document ingestion</a>
+            <a href="#">Income verification</a>
+            <a href="#">Fraud signals</a>
             <a href="#">Audit log</a>
           </div>
           <div className="foot-col">
-            <h4>Industries</h4>
-            <a href="#">Credit &amp; financing</a>
-            <a href="#">AML in banking</a>
-            <a href="#">Insurance</a>
-            <a href="#">Legal &amp; compliance</a>
+            <h4>Credit products</h4>
+            <a href="#">Consumer lending</a>
+            <a href="#">Business credit</a>
+            <a href="#">Mortgage &amp; real estate</a>
+            <a href="#">BNPL &amp; embedded finance</a>
           </div>
           <div className="foot-col">
             <h4>Company</h4>
