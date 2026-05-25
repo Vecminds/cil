@@ -27,7 +27,7 @@ export default function Nav() {
           <a href="#how">How it works</a>
           <a href="#industries">Industries</a>
           <a href="#faq">FAQ</a>
-          <a href="#docs" className="mono" style={{ fontSize: 13 }}>
+          <a href="/docs" className="mono" style={{ fontSize: 13 }}>
             Docs ↗
           </a>
         </div>
