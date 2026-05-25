@@ -11,7 +11,7 @@ export default function CTA() {
           </h2>
           <p>
             A 30-minute walkthrough with our team. Bring a real document flow you&apos;d like to scope; leave
-            with a working prototype that turns your borrower pile into a clean credit file within two weeks.
+            with a working prototype within two weeks — and a flywheel that starts turning on day one.
           </p>
           <div className="cta-actions">
             <a href="#" className="btn primary lg">

@@ -20,10 +20,10 @@ export default function Solution() {
           <div className="reveal">
             <h2 style={{ marginBottom: 14 }}>We prepare the file. You make the call.</h2>
             <p>
-              Oloid sits on top of your existing loan-origination system — not in place of it. We ingest
-              documents as they arrive, do the reading and reconciliation, and hand the underwriter a verified
-              file with every figure sourced and every discrepancy surfaced. The lending decision stays with
-              your team.
+              Oloid sits on top of your existing LOS — not in place of it. We ingest documents as they arrive,
+              do the reading and reconciliation, and hand the underwriter a verified file with every figure
+              sourced and every discrepancy surfaced. The lending decision stays with your team. It starts as
+              a time-saver. Over time, it becomes an institutional advantage.
             </p>
             <ul className="solution-bullets">
               <li>
@@ -32,7 +32,7 @@ export default function Solution() {
                 </span>
                 <span>
                   <strong>Drops into your LOS.</strong>{" "}
-                  <span className="label">Read-only connector. No rip-and-replace. Live in days.</span>
+                  <span className="label">Read-only connector. No workflow changes. Live in days.</span>
                 </span>
               </li>
               <li>
@@ -40,9 +40,9 @@ export default function Solution() {
                   <Check />
                 </span>
                 <span>
-                  <strong>Structured output.</strong>{" "}
+                  <strong>We augment, not replace.</strong>{" "}
                   <span className="label">
-                    Verified income, reconciled figures, and flagged signals your UI can render directly.
+                    The lending decision stays with your underwriter. We make it faster and better.
                   </span>
                 </span>
               </li>
@@ -51,8 +51,8 @@ export default function Solution() {
                   <Check />
                 </span>
                 <span>
-                  <strong>Outcome-trained.</strong>{" "}
-                  <span className="label">Every loan it touches feeds the flywheel — next file is sharper.</span>
+                  <strong>Gets sharper over time.</strong>{" "}
+                  <span className="label">Every loan outcome trains the model on your portfolio — not generic data.</span>
                 </span>
               </li>
               <li>
@@ -60,7 +60,7 @@ export default function Solution() {
                   <Check />
                 </span>
                 <span>
-                  <strong>Regulator-ready.</strong>{" "}
+                  <strong>Regulator-ready on day one.</strong>{" "}
                   <span className="label">Full audit log. Every figure sourced. Every step replayable.</span>
                 </span>
               </li>
@@ -70,7 +70,7 @@ export default function Solution() {
           <div className="api-card reveal" data-delay="2">
             <div className="head">
               <span className="method">POST</span>
-              <span>/v2/intelligence/verify</span>
+              <span>/v1/intelligence/verify</span>
               <span style={{ marginLeft: "auto" }}>document.credit_file</span>
             </div>
             <pre>

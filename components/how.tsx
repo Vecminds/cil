@@ -40,8 +40,8 @@ const steps: { n: string; t: string; b: string; vis: ReactNode }[] = [
   },
   {
     n: "04",
-    t: "Underwriter decides. Outcome feeds the flywheel.",
-    b: "Your underwriter acts on a clean file, not a pile. How the loan performs comes back to the system — sharpening fraud signals and income patterns for every file that follows.",
+    t: "Underwriter decides. Outcome trains the next file.",
+    b: "Your underwriter acts on a clean file, not a pile. How the loan performs — repayment, default, early exit — comes back to train the model on your portfolio. Every file Oloid processes makes the next one sharper in a way no competitor can replicate.",
     vis: (
       <div style={{ display: "grid", gap: 6, width: "100%" }}>
         <Row label="2024-08-14  verified  ✓  approved" tone="ok" />

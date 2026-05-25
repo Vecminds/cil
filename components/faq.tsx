@@ -6,23 +6,23 @@ import { Plus } from "./icons";
 const items = [
   {
     q: "Do you make the lending decision?",
-    a: "No. Oloid prepares the verified credit file — income computed, discrepancies surfaced, fraud signals flagged. The lending decision stays entirely with your underwriter. We augment the human; we don't replace them.",
+    a: "No. Oloid prepares the verified credit file — income computed, discrepancies surfaced, fraud signals flagged. The lending decision stays entirely with your underwriter. We make the human's decision faster and better; we don't replace it.",
   },
   {
-    q: "What document types can you process?",
-    a: "Pay stubs, W-2s, 1040s, bank statements (PDF or export), business financial statements, profit-and-loss reports, rent rolls, and most other borrower documents. If a document type is new to us, it typically takes one to two weeks to add structured extraction for it.",
+    q: "How does Oloid improve over time?",
+    a: "Every file Oloid processes eventually gets tagged with a real repayment outcome — whether the borrower repaid, where early defaults clustered, which document signals predicted fraud. That outcome data trains the models on your specific borrower population. What predicts default in your portfolio is a signal no off-the-shelf model has ever seen. The longer Oloid runs, the wider that gap grows.",
   },
   {
-    q: "How does the outcome flywheel actually work?",
-    a: "Oloid observes how each file it processes performs over time — whether the borrower repays, where early-payment-default clusters, which document signals predicted fraud. That signal is fed back into the extraction and flagging models. Every loan the system touches makes the next document review sharper. No competitor using an off-the-shelf model has access to your outcome data.",
+    q: "Why can't we use an off-the-shelf document AI?",
+    a: "Off-the-shelf models can extract text from documents. They can't tell you which income patterns in your specific borrower population actually predict repayment — because they have never seen your loan outcomes. Oloid starts with strong general extraction and gets sharper as it observes how the files it processes perform. That outcome-trained layer is not something you can buy; it accumulates as you use the system.",
   },
   {
-    q: "How do you detect document fraud?",
-    a: "We look for document-level signals: metadata inconsistencies, font and formatting anomalies, figures that are internally inconsistent, and patterns learned from files that went into default. Fraud signals are surfaced as specific observations — not just a score — so your underwriter can assess them.",
+    q: "Why can't a big AI company replicate this?",
+    a: "A better model alone doesn't copy what Oloid builds over time. The moat is four things: the workflow your credit team works inside every day (switching means retraining staff and re-validating with auditors); the outcome data flywheel trained on your portfolio (no one else has it); the regulatory audit history that strengthens with each decision; and distribution through the LOS platforms lenders already run. A new entrant — including a large one — starts all four clocks from zero.",
   },
   {
     q: "How do we integrate with our existing LOS?",
-    a: "A read-only connector to your LOS and document store. We support most major platforms out of the box; our SDK handles the rest. Most teams are ingesting live documents within a week of starting a pilot, without touching their existing workflow.",
+    a: "A read-only connector to your LOS and document store — your existing workflow doesn't change. We support most major platforms out of the box; our SDK handles the rest. Most teams are ingesting live documents within a week of starting a pilot.",
   },
   {
     q: "How is borrower data protected?",

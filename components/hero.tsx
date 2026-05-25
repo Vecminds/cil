@@ -1,69 +1,82 @@
 "use client";
 
-import { Arrow, Check } from "./icons";
+import {Arrow, Check} from "./icons";
 import HeroVisual from "./hero-visual";
-import { useTweaks } from "./tweaks/tweaks-context";
+import {useTweaks} from "./tweaks/tweaks-context";
 
 export default function Hero() {
-  const { t } = useTweaks();
+    const {t} = useTweaks();
 
-  return (
-    <section className="hero">
-      <div className="hero-grid-bg" aria-hidden="true" />
-      <div className="container">
-        <div className="reveal">
-          <span className="eyebrow">
-            <span className="dot" />
-            <span className="mono">Document intelligence · Outcome-trained · Audit-ready</span>
-          </span>
-        </div>
-        <h1 className="reveal" data-delay="1">
-          {t.headline.split(/(\bthat\b)/i).map((part, i) =>
-            /^that$/i.test(part) ? (
-              <span key={i} className="em">
-                {part}
-              </span>
-            ) : (
-              <span key={i}>{part}</span>
-            )
-          )}
-        </h1>
-        <p className="sub reveal" data-delay="2">
-          Oloid sits on top of your existing loan-origination system and ingests the borrower&apos;s documents
-          — pay stubs, bank statements, tax returns, financial statements — turning them into a clean, structured,
-          verified credit file in minutes. Income computed. Discrepancies reconciled. Fraud signals flagged.
-          Your underwriter decides. Every step is explainable and auditable for the regulator.
-        </p>
-        <div className="hero-cta reveal" data-delay="2">
-          <a href="#cta" className="btn primary lg">
-            Book a demo <Arrow className="arrow" />
-          </a>
-          <a href="#platform" className="btn outline lg">
-            See the platform
-          </a>
-        </div>
-        <div className="hero-meta reveal" data-delay="3">
-          <span>
-            <span className="check">
-              <Check style={{ verticalAlign: "-2px" }} />
-            </span>{" "}
-            Sits on top of your existing LOS
-          </span>
-          <span>
-            <span className="check">
-              <Check style={{ verticalAlign: "-2px" }} />
-            </span>{" "}
-            We prepare the file — you make the decision
-          </span>
-          <span>
-            <span className="check">
-              <Check style={{ verticalAlign: "-2px" }} />
-            </span>{" "}
-            Every step explainable &amp; auditable
-          </span>
-        </div>
-        <HeroVisual />
-      </div>
-    </section>
-  );
+    return (
+        <section className="hero">
+            <div className="hero-grid-bg" aria-hidden="true"/>
+            <div className="container">
+                <div className="reveal">
+                    <span className="eyebrow">
+                        <span className="dot"/>
+                        <span className="mono">Document intelligence · Outcome-trained · Audit-ready</span>
+                    </span>
+                </div>
+                <h1 className="reveal" data-delay="1">
+                    {
+                    t.headline.split(/(\bthat\b)/i).map((part, i) => /^that$/i.test(part) ? (
+                        <span key={i}
+                            className="em">
+                            {part} </span>
+                    ) : (
+                        <span key={i}>
+                            {part}</span>
+                    ))
+                } </h1>
+                <p className="sub reveal" data-delay="2">
+                    Oloid plugs into your existing loan-origination system and turns borrower documents into a verified credit file in minutes — income calculated, discrepancies resolved, and fraud risks flagged. Every loan processed makes the system smarter, creating a compounding advantage competitors can’t copy.
+                </p>
+                <div className="hero-cta reveal" data-delay="2">
+                    <a href="#cta" className="btn primary lg">
+                        Book a demo
+                        <Arrow className="arrow"/>
+                    </a>
+                    <a href="#platform" className="btn outline lg">
+                        See the platform
+                    </a>
+                </div>
+                <div className="hero-meta reveal" data-delay="3">
+                    <span>
+                        <span className="check">
+                            <Check style={
+                                {
+                                    verticalAlign: "-2px"
+                                }
+                            }/>
+                        </span>
+                        {" "}
+                        Sits on top of your existing LOS
+                    </span>
+                    <span>
+                        <span className="check">
+                            <Check style={
+                                {
+                                    verticalAlign: "-2px"
+                                }
+                            }/>
+                        </span>
+                        {" "}
+                        We prepare the file — you make the decision
+                    </span>
+                    <span>
+                        <span className="check">
+                            <Check style={
+                                {
+                                    verticalAlign: "-2px"
+                                }
+                            }/>
+                        </span>
+                        {" "}
+                        Every step explainable &amp; auditable
+                    </span>
+                </div>
+                <HeroVisual/>
+            </div>
+        </section>
+    );
 }
