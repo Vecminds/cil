@@ -3,6 +3,7 @@
 import {Arrow, Check} from "./icons";
 import HeroVisual from "./hero-visual";
 import {useTweaks} from "./tweaks/tweaks-context";
+import CalButton from "./cal-button";
 
 export default function Hero() {
     const {t} = useTweaks();
@@ -32,10 +33,10 @@ export default function Hero() {
                     Vecminds plugs into your existing loan-origination system and turns borrower documents into a verified credit file in minutes — income calculated, discrepancies resolved, and fraud risks flagged. Every loan processed makes the system smarter, creating a compounding advantage competitors can’t copy.
                 </p>
                 <div className="hero-cta reveal" data-delay="2">
-                    <a href="#cta" className="btn primary lg">
+                    <CalButton className="btn primary lg">
                         Book a demo
                         <Arrow className="arrow"/>
-                    </a>
+                    </CalButton>
                     <a href="#platform" className="btn outline lg">
                         See the platform
                     </a>

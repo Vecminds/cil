@@ -1,4 +1,5 @@
 import { Arrow, ArrowDown } from "./icons";
+import CalButton from "./cal-button";
 
 export default function CTA() {
   return (
@@ -14,9 +15,9 @@ export default function CTA() {
             with a working prototype within two weeks — and a flywheel that starts turning on day one.
           </p>
           <div className="cta-actions">
-            <a href="#" className="btn primary lg">
+            <CalButton className="btn primary lg">
               Book a 30-min demo <Arrow className="arrow" />
-            </a>
+            </CalButton>
             <a href="#" className="btn outline lg">
               Read the technical brief <ArrowDown style={{ transform: "rotate(-90deg)" }} />
             </a>

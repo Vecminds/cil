@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import CalButton from "@/components/cal-button";
 
 type NavItem = { id: string; label: string; children?: { id: string; label: string }[] };
 
@@ -127,7 +128,7 @@ export default function DocsPage() {
           </Link>
           <nav className="docs-topnav">
             <a href="#">API Explorer</a>
-            <Link href="/#cta" className="btn primary" style={{ height: 34, fontSize: 13, padding: "0 14px" }}>Book a demo</Link>
+            <CalButton className="btn primary" style={{ height: 34, fontSize: 13, padding: "0 14px" }}>Book a demo</CalButton>
           </nav>
         </div>
       </header>

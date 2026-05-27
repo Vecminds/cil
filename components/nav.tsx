@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Arrow, Sun, Moon } from "./icons";
 import { useTweaks } from "./tweaks/tweaks-context";
+import CalButton from "./cal-button";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,9 +43,9 @@ export default function Nav() {
           <a href="#" className="btn ghost" style={{ fontSize: 14 }}>
             Sign in
           </a>
-          <a href="#cta" className="btn primary">
+          <CalButton className="btn primary">
             Book a demo <Arrow className="arrow" />
-          </a>
+          </CalButton>
         </div>
       </div>
     </nav>
