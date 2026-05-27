@@ -42,7 +42,7 @@ export default function Industries() {
             Every lending vertical, <span className="em">one</span> intelligence layer.
           </h2>
           <p>
-            Oloid is in production across consumer, commercial and embedded lending — wherever a credit officer
+            Vecminds is in production across consumer, commercial and embedded lending — wherever a credit officer
             is still spending days on a document pile that a machine should be reading.
           </p>
         </div>

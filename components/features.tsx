@@ -23,19 +23,19 @@ const feats: { ic: ReactNode; t: string; b: string; tag: string }[] = [
   {
     ic: <Bolt />,
     t: "The outcome flywheel",
-    b: "Every loan Oloid touches eventually gets tagged with a real repayment outcome. That signal trains the model on your borrower population — what predicts default in your portfolio is something no off-the-shelf model has ever seen, and no competitor can copy.",
+    b: "Every loan Vecminds touches eventually gets tagged with a real repayment outcome. That signal trains the model on your borrower population — what predicts default in your portfolio is something no off-the-shelf model has ever seen, and no competitor can copy.",
     tag: "DATA MOAT",
   },
   {
     ic: <Shield />,
     t: "Embedded in your workflow",
-    b: "Oloid lives inside the LOS your credit team already runs — not beside it. There is no new tool to learn, no parallel system to maintain. It becomes part of how your team works, not something alongside it.",
+    b: "Vecminds lives inside the LOS your credit team already runs — not beside it. There is no new tool to learn, no parallel system to maintain. It becomes part of how your team works, not something alongside it.",
     tag: "WORKFLOW",
   },
   {
     ic: <Eye />,
     t: "Audit history that compounds",
-    b: "Every decision builds your regulatory trail. The longer Oloid runs in your stack, the stronger your examiner story becomes. A new entrant — or an off-the-shelf model — starts that clock from zero.",
+    b: "Every decision builds your regulatory trail. The longer Vecminds runs in your stack, the stronger your examiner story becomes. A new entrant — or an off-the-shelf model — starts that clock from zero.",
     tag: "REGULATORY TRUST",
   },
 ];

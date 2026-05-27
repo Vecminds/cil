@@ -29,7 +29,7 @@ export default function Hero() {
                     ))
                 } </h1>
                 <p className="sub reveal" data-delay="2">
-                    Oloid plugs into your existing loan-origination system and turns borrower documents into a verified credit file in minutes — income calculated, discrepancies resolved, and fraud risks flagged. Every loan processed makes the system smarter, creating a compounding advantage competitors can’t copy.
+                    Vecminds plugs into your existing loan-origination system and turns borrower documents into a verified credit file in minutes — income calculated, discrepancies resolved, and fraud risks flagged. Every loan processed makes the system smarter, creating a compounding advantage competitors can’t copy.
                 </p>
                 <div className="hero-cta reveal" data-delay="2">
                     <a href="#cta" className="btn primary lg">

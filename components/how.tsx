@@ -17,7 +17,7 @@ const steps: { n: string; t: string; b: string; vis: ReactNode }[] = [
   {
     n: "02",
     t: "Submit the document package",
-    b: "Pass the borrower's documents to the API as-is. Pay stubs, bank statements, tax returns — Oloid reads them so your team doesn't have to.",
+    b: "Pass the borrower's documents to the API as-is. Pay stubs, bank statements, tax returns — Vecminds reads them so your team doesn't have to.",
     vis: (
       <pre
         className="mono"
@@ -41,7 +41,7 @@ const steps: { n: string; t: string; b: string; vis: ReactNode }[] = [
   {
     n: "04",
     t: "Underwriter decides. Outcome trains the next file.",
-    b: "Your underwriter acts on a clean file, not a pile. How the loan performs — repayment, default, early exit — comes back to train the model on your portfolio. Every file Oloid processes makes the next one sharper in a way no competitor can replicate.",
+    b: "Your underwriter acts on a clean file, not a pile. How the loan performs — repayment, default, early exit — comes back to train the model on your portfolio. Every file Vecminds processes makes the next one sharper in a way no competitor can replicate.",
     vis: (
       <div style={{ display: "grid", gap: 6, width: "100%" }}>
         <Row label="2024-08-14  verified  ✓  approved" tone="ok" />
@@ -61,7 +61,7 @@ export default function How() {
           <h2>
             Production-ready in <span className="em">four</span> steps.
           </h2>
-          <p>Most lending teams have their first document flow verified by Oloid within a two-week pilot.</p>
+          <p>Most lending teams have their first document flow verified by Vecminds within a two-week pilot.</p>
         </div>
         <div className="steps">
           {steps.map((s, i) => (

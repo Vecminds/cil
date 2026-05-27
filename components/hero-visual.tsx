@@ -7,7 +7,7 @@ export default function HeroVisual() {
           <span />
           <span />
         </div>
-        <div className="path mono">oloid.intelligence / pipeline</div>
+        <div className="path mono">vecminds.intelligence / pipeline</div>
         <div className="badge mono">
           <span className="pulse" />
           live inference
@@ -33,7 +33,7 @@ export default function HeroVisual() {
         </div>
         <div className="hv-layer platform">
           <div>
-            <div className="hv-l-title">Oloid Intelligence Layer</div>
+            <div className="hv-l-title">Vecminds Intelligence Layer</div>
             <div className="hv-l-sub">Reasoning · scoring · explanation · audit</div>
           </div>
           <div className="hv-chips">

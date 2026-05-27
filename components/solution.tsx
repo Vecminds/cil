@@ -10,7 +10,7 @@ export default function Solution() {
             One integration. A verified file in <span className="em">minutes</span>.
           </h2>
           <p>
-            Connect Oloid to your LOS and document store. Submit the borrower&apos;s package as-is. Receive a
+            Connect Vecminds to your LOS and document store. Submit the borrower&apos;s package as-is. Receive a
             clean, structured credit file — income computed, discrepancies reconciled, fraud signals flagged —
             ready for your underwriter to act on.
           </p>
@@ -20,7 +20,7 @@ export default function Solution() {
           <div className="reveal">
             <h2 style={{ marginBottom: 14 }}>We prepare the file. You make the call.</h2>
             <p>
-              Oloid sits on top of your existing LOS — not in place of it. We ingest documents as they arrive,
+              Vecminds sits on top of your existing LOS — not in place of it. We ingest documents as they arrive,
               do the reading and reconciliation, and hand the underwriter a verified file with every figure
               sourced and every discrepancy surfaced. The lending decision stays with your team. It starts as
               a time-saver. Over time, it becomes an institutional advantage.

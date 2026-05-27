@@ -20,7 +20,7 @@ export default function Nav() {
       <div className="container nav-inner">
         <a href="#" className="nav-logo">
           <span className="mark" aria-hidden="true" />
-          Oloid Intelligence
+          Vecminds Intelligence
         </a>
         <div className="nav-links">
           <a href="#platform">Platform</a>

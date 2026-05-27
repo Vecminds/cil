@@ -12,9 +12,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Oloid Intelligence — The intelligence layer for systems that already exist",
+  title: "Vecminds Intelligence — The intelligence layer for systems that already exist",
   description:
-    "Oloid Intelligence sits on top of your legacy stack and gives every record, claim or case a fast, explainable decision. One API. Built for credit, compliance, AML and insurance teams.",
+    "Vecminds Intelligence sits on top of your legacy stack and gives every record, claim or case a fast, explainable decision. One API. Built for credit, compliance, AML and insurance teams.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

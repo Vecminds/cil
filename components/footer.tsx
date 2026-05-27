@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="foot-brand">
             <div className="nav-logo">
               <span className="mark" aria-hidden="true" />
-              Oloid Intelligence
+              Vecminds Intelligence
             </div>
             <p>The document intelligence layer for lenders. Verified files in minutes. Every step auditable.</p>
           </div>
@@ -28,14 +28,12 @@ export default function Footer() {
           <div className="foot-col">
             <h4>Company</h4>
             <a href="#">About</a>
-            <a href="#">Customers</a>
             <a href="#">Security</a>
-            <a href="#">Careers</a>
             <a href="#">Contact</a>
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© 2026 Oloid Intelligence, Inc.</span>
+          <span>© 2026 Vecminds Intelligence, Inc.</span>
           <span>SOC 2 Type II · ISO 27001 · GDPR</span>
         </div>
       </div>

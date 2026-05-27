@@ -121,7 +121,7 @@ export default function DocsPage() {
         <div className="docs-topbar-inner">
           <Link href="/" className="docs-brand">
             <span className="mark" aria-hidden="true" />
-            Oloid Intelligence
+            Vecminds Intelligence
             <span className="docs-sep">/</span>
             <span className="docs-breadcrumb">Docs</span>
           </Link>
@@ -156,27 +156,27 @@ export default function DocsPage() {
 
           {/* ── INTRODUCTION ── */}
           <section id="introduction" data-ds>
-            <h1 className="docs-h1">Oloid Intelligence — Integration Guide</h1>
+            <h1 className="docs-h1">Vecminds Intelligence — Integration Guide</h1>
             <p className="docs-section-intro">
-              This guide covers everything needed to integrate Oloid into your existing loan-origination system.
-              Oloid is a document intelligence layer that sits on top of your LOS and turns a borrower&apos;s document
+              This guide covers everything needed to integrate Vecminds into your existing loan-origination system.
+              Vecminds is a document intelligence layer that sits on top of your LOS and turns a borrower&apos;s document
               package — pay stubs, bank statements, tax returns, financial statements — into a clean, structured,
               verified credit file in minutes. Income computed. Discrepancies reconciled. Fraud signals flagged.
               Your underwriter decides.
             </p>
             <p className="docs-p">
-              <strong>Oloid does not make the lending decision.</strong> It prepares the verified credit file and hands
+              <strong>Vecminds does not make the lending decision.</strong> It prepares the verified credit file and hands
               it to your underwriter. Every figure in the output is sourced to the document line that produced it.
               Every step is replayable for regulators and auditors.
             </p>
             <p className="docs-p">
-              Every file Oloid processes is eventually tagged with a real repayment outcome. That outcome data trains
+              Every file Vecminds processes is eventually tagged with a real repayment outcome. That outcome data trains
               the model on your specific borrower population — creating a flywheel that sharpens fraud signal accuracy
               and income pattern recognition in a way no off-the-shelf model can replicate.
             </p>
             <div className="docs-cards-3">
               {[
-                { label: "Base URL", value: "https://api.oloid.ai/v1" },
+                { label: "Base URL", value: "https://api.vecminds.ai/v1" },
                 { label: "Auth", value: "Bearer API key" },
                 { label: "Format", value: "JSON · multipart" },
               ].map((c) => (
@@ -192,7 +192,7 @@ export default function DocsPage() {
           <section id="architecture" data-ds style={{ marginTop: 52 }}>
             <h1 className="docs-h1">Architecture</h1>
             <p className="docs-section-intro">
-              Oloid slots into the existing document flow as a read-only processing layer between your document
+              Vecminds slots into the existing document flow as a read-only processing layer between your document
               store and your underwriting UI. Nothing in your LOS is modified.
             </p>
             <Pre lang="Architecture">{`  Your LOS / Document Store
@@ -200,7 +200,7 @@ export default function DocsPage() {
           │  read-only connector
           ▼
   ┌───────────────────────────────────────────┐
-  │           Oloid Intelligence              │
+  │           Vecminds Intelligence              │
   │                                           │
   │  Document Parser  ──►  Income Engine      │
   │  PDF · scan · CSV      gross · net ·      │
@@ -229,8 +229,8 @@ export default function DocsPage() {
                     proprietary signal)`}</Pre>
             <h2 className="docs-h2">Key principles</h2>
             <ul className="docs-ul">
-              <li><strong>Read-only by default.</strong> Oloid never writes to your LOS. Documents are read; the verified file is returned as a response.</li>
-              <li><strong>Augment, not replace.</strong> The verified credit file goes to your underwriter. Oloid does not approve or decline loans.</li>
+              <li><strong>Read-only by default.</strong> Vecminds never writes to your LOS. Documents are read; the verified file is returned as a response.</li>
+              <li><strong>Augment, not replace.</strong> The verified credit file goes to your underwriter. Vecminds does not approve or decline loans.</li>
               <li><strong>Explainable at every step.</strong> Every figure in the output is sourced to the specific document line that produced it.</li>
               <li><strong>Outcome-trained.</strong> As real repayment outcomes are tagged back, the model sharpens on your portfolio — not generic training data.</li>
               <li><strong>Your perimeter.</strong> In VPC and on-prem deployments, documents never leave your network.</li>
@@ -253,10 +253,10 @@ export default function DocsPage() {
 Authorization: Bearer ok_live_xxxxxxxxxxxxxxxxxxxx
 Content-Type: application/json`}</Pre>
             <Callout type="warn" label="Server-side only">
-              The Oloid SDK and API key must <strong>never</strong> be used in browser (client-side) code.
+              The Vecminds SDK and API key must <strong>never</strong> be used in browser (client-side) code.
               A key in the browser is visible to every user in the network tab — anyone who finds it can
               submit unlimited jobs billed to your account or read your borrower audit trails. Always call
-              Oloid from your server (Node.js, Python, Java, .NET) and proxy the result to the browser.
+              Vecminds from your server (Node.js, Python, Java, .NET) and proxy the result to the browser.
               For Next.js, use an API Route or Server Action. See the Quickstart for a working example.
             </Callout>
             <h2 className="docs-h2">Key rotation</h2>
@@ -277,41 +277,41 @@ Content-Type: application/json`}</Pre>
               All code in this section runs on <strong>your server</strong> — a Next.js API Route, an Express
               handler, a Python service, etc. None of it belongs in a React component, browser bundle, or any
               code shipped to the client. The API key, document bytes, and verified credit file should never
-              touch the browser directly. The browser calls <em>your</em> server; your server calls Oloid.
+              touch the browser directly. The browser calls <em>your</em> server; your server calls Vecminds.
             </Callout>
 
             <h2 className="docs-h2">Step 1 — Install the SDK</h2>
             <Pre lang="bash">{`# Node.js / TypeScript
-npm install @oloid/intelligence
+npm install @vecminds/intelligence
 
 # Python
-pip install oloid-intelligence
+pip install vecminds-intelligence
 
 # Java (Maven)
-# groupId: ai.oloid  artifactId: intelligence-sdk  version: 2.4.0
+# groupId: ai.vecminds  artifactId: intelligence-sdk  version: 2.4.0
 
 # .NET
-dotnet add package Oloid.Intelligence`}</Pre>
+dotnet add package Vecminds.Intelligence`}</Pre>
 
             <h2 className="docs-h2">Step 2 — Initialize the client</h2>
-            <Pre lang="TypeScript">{`import { OloidClient } from "@oloid/intelligence";
+            <Pre lang="TypeScript">{`import { VecmindsClient } from "@vecminds/intelligence";
 
-const client = new OloidClient({
-  apiKey: process.env.OLOID_API_KEY,         // ok_live_...
-  // baseUrl: "https://oloid.your-vpc.internal/v1",  // VPC / on-prem
+const client = new VecmindsClient({
+  apiKey: process.env.VECMINDS_API_KEY,         // ok_live_...
+  // baseUrl: "https://vecminds.your-vpc.internal/v1",  // VPC / on-prem
 });`}</Pre>
 
             <h2 className="docs-h2">Step 3 — Proxy through your server (Next.js example)</h2>
             <p className="docs-p">
               Your browser uploads documents to <strong>your own API route</strong>. That route forwards
-              them to Oloid server-to-server. The API key never leaves your server.
+              them to Vecminds server-to-server. The API key never leaves your server.
             </p>
-            <Pre lang="TypeScript — app/api/verify/route.ts (server)">{`// This file runs on the server only. The OLOID_API_KEY env var
+            <Pre lang="TypeScript — app/api/verify/route.ts (server)">{`// This file runs on the server only. The VECMINDS_API_KEY env var
 // is never bundled into the browser.
-import { OloidClient } from "@oloid/intelligence";
+import { VecmindsClient } from "@vecminds/intelligence";
 import { NextRequest, NextResponse } from "next/server";
 
-const oloid = new OloidClient({ apiKey: process.env.OLOID_API_KEY! });
+const vecminds = new VecmindsClient({ apiKey: process.env.VECMINDS_API_KEY! });
 
 export async function POST(req: NextRequest) {
   // 1. Authenticate the incoming request with your own session/auth
@@ -323,20 +323,20 @@ export async function POST(req: NextRequest) {
   const applicationId = form.get("application_id") as string;
   const files = form.getAll("documents") as File[];
 
-  // 3. Forward to Oloid server-to-server (key stays on the server)
-  const job = await oloid.verify.create({
+  // 3. Forward to Vecminds server-to-server (key stays on the server)
+  const job = await vecminds.verify.create({
     subject:   { id: applicationId, type: "loan_application" },
     documents: await Promise.all(
       files.map(async (f) => ({ name: f.name, data: Buffer.from(await f.arrayBuffer()) }))
     ),
     policy: "income.verify-2024",
-    notify: "https://your-los.internal/webhooks/oloid",
+    notify: "https://your-los.internal/webhooks/vecminds",
   });
 
   // 4. Return only the job ID to the browser — no key, no raw docs
   return NextResponse.json({ jobId: job.id });
 }`}</Pre>
-            <Pre lang="TypeScript — Browser (React component)">{`// The browser never touches Oloid directly.
+            <Pre lang="TypeScript — Browser (React component)">{`// The browser never touches Vecminds directly.
 // It uploads to YOUR route and receives only the job ID.
 async function submitApplication(applicationId: string, files: File[]) {
   const form = new FormData();
@@ -372,7 +372,7 @@ console.log(result.audit_id);        // "aud_3F8C1B"`}</Pre>
 
             <h2 className="docs-h2">Step 5 — Tag the outcome (feed the flywheel)</h2>
             <p className="docs-p">
-              When the loan reaches a repayment outcome, tag it back to Oloid. This is how the model learns
+              When the loan reaches a repayment outcome, tag it back to Vecminds. This is how the model learns
               which document patterns predict repayment in <em>your</em> portfolio. This call is triggered
               by a server-side event from your LOS — a loan close, a default flag, a charge-off — never
               from a browser session.
@@ -380,9 +380,9 @@ console.log(result.audit_id);        // "aud_3F8C1B"`}</Pre>
             <Pre lang="TypeScript — server-side LOS event handler">{`// Called by your LOS webhook / internal event bus when a loan closes.
 // This is server-only code — a browser session is never involved.
 async function onLoanClosed(event: LoanClosedEvent) {
-  const jobId = await db.getOloidJobId(event.applicationId);
+  const jobId = await db.getVecmindsJobId(event.applicationId);
 
-  await oloid.outcomes.tag({
+  await vecminds.outcomes.tag({
     job_id:            jobId,
     outcome:           "repaid",   // repaid | default | early_payoff | charged_off
     months_to_outcome: event.monthsFromOrigination,
@@ -400,7 +400,7 @@ async function onLoanClosed(event: LoanClosedEvent) {
           <section id="concepts" data-ds style={{ marginTop: 52 }}>
             <h1 className="docs-h1">Core Concepts</h1>
             <p className="docs-section-intro">
-              These four concepts cover the full lifecycle of a document package through Oloid.
+              These four concepts cover the full lifecycle of a document package through Vecminds.
             </p>
           </section>
 
@@ -458,7 +458,7 @@ async function onLoanClosed(event: LoanClosedEvent) {
           <section id="concept-policies" data-ds style={{ marginTop: 32 }}>
             <h2 className="docs-h2">Policies</h2>
             <p className="docs-p">
-              A policy controls how Oloid processes a document package — income source weights, discrepancy
+              A policy controls how Vecminds processes a document package — income source weights, discrepancy
               tolerances, required document types, and fraud detection behaviour. Policies are versioned YAML
               files. Standard policies ship with every account; custom policies are authored by your team.
             </p>
@@ -490,7 +490,7 @@ async function onLoanClosed(event: LoanClosedEvent) {
           <section id="api" data-ds style={{ marginTop: 52 }}>
             <h1 className="docs-h1">API Reference</h1>
             <p className="docs-section-intro">
-              All endpoints are relative to <IC>https://api.oloid.ai/v1</IC>. For VPC and on-prem deployments,
+              All endpoints are relative to <IC>https://api.vecminds.ai/v1</IC>. For VPC and on-prem deployments,
               replace the host with your internal endpoint. All requests and responses are JSON unless noted.
             </p>
           </section>
@@ -505,7 +505,7 @@ async function onLoanClosed(event: LoanClosedEvent) {
               { name: "documents", type: "array", req: true, desc: "Array of document objects. At least one required." },
               { name: "documents[].name", type: "string", req: true, desc: "Filename with extension — used in output citations (e.g. 'pay_stub_aug.pdf')." },
               { name: "documents[].data", type: "string (base64)", req: false, desc: "Base64-encoded file content. Either data or url is required per document." },
-              { name: "documents[].url", type: "string", req: false, desc: "Pre-signed URL. Oloid fetches the document at processing time. Either url or data required." },
+              { name: "documents[].url", type: "string", req: false, desc: "Pre-signed URL. Vecminds fetches the document at processing time. Either url or data required." },
               { name: "policy", type: "string", req: true, desc: "Policy ID to apply, e.g. 'income.verify-2024'. Pin a version with 'income.verify-2024@v3'." },
               { name: "notify", type: "string", req: false, desc: "Webhook URL called when the job completes. If omitted, poll GET /verify/{id}." },
               { name: "mode", type: "string", req: false, desc: "'async' (default) returns immediately with job_id. 'sync' waits up to 30 s and returns the full credit file." },
@@ -520,7 +520,7 @@ async function onLoanClosed(event: LoanClosedEvent) {
     { "name": "1040_2023.pdf",    "data": "<base64>" }
   ],
   "policy":   "income.verify-2024",
-  "notify":   "https://your-los.internal/webhooks/oloid",
+  "notify":   "https://your-los.internal/webhooks/vecminds",
   "metadata": { "loan_officer_id": "lo_882", "product": "personal_unsecured" }
 }`}</Pre>
             <h3 className="docs-h3">Response — async (immediate)</h3>
@@ -630,7 +630,7 @@ async function onLoanClosed(event: LoanClosedEvent) {
           <section id="connectors" data-ds style={{ marginTop: 52 }}>
             <h1 className="docs-h1">LOS Connectors</h1>
             <p className="docs-section-intro">
-              Oloid ships pre-built read-only connectors for the most common loan-origination systems. No schema
+              Vecminds ships pre-built read-only connectors for the most common loan-origination systems. No schema
               changes to your LOS are required.
             </p>
             <Params rows={[
@@ -642,7 +642,7 @@ async function onLoanClosed(event: LoanClosedEvent) {
               { name: "SDK (custom)", type: "connector", req: false, desc: "For platforms not on this list. Full TypeScript, Python, Java, and .NET SDKs." },
             ]} />
             <h2 className="docs-h2">Encompass configuration example</h2>
-            <Pre lang="YAML">{`# oloid-connector.yaml
+            <Pre lang="YAML">{`# vecminds-connector.yaml
 connector: encompass
 auth:
   client_id:     $ENCOMPASS_CLIENT_ID
@@ -655,16 +655,16 @@ trigger:
 
 document_mapping:
   - efolder_name: "Pay Stubs"
-    oloid_type:   pay_stub
+    vecminds_type:   pay_stub
   - efolder_name: "Bank Statements"
-    oloid_type:   bank_statement
+    vecminds_type:   bank_statement
   - efolder_name: "Tax Returns"
-    oloid_type:   tax_return
+    vecminds_type:   tax_return
 
-oloid:
-  api_key: $OLOID_API_KEY
+vecminds:
+  api_key: $VECMINDS_API_KEY
   policy:  income.verify-2024
-  notify:  https://your-los.internal/webhooks/oloid
+  notify:  https://your-los.internal/webhooks/vecminds
   metadata:
     loan_officer_id: $ENCOMPASS_LOAN_OFFICER_ID`}</Pre>
           </section>
@@ -693,7 +693,7 @@ oloid:
 }`}</Pre>
             <h2 className="docs-h2">Verifying signatures</h2>
             <p className="docs-p">
-              Every request includes an <IC>X-Oloid-Signature</IC> header. Verify it before processing.
+              Every request includes an <IC>X-Vecminds-Signature</IC> header. Verify it before processing.
               The webhook secret lives in your server environment — never in the browser.
             </p>
             <Pre lang="TypeScript — server-side webhook handler">{`import crypto from "crypto";
@@ -706,9 +706,9 @@ function verifyWebhook(payload: string, signature: string, secret: string): bool
   return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected));
 }
 
-app.post("/webhooks/oloid", (req, res) => {
-  const sig = req.headers["x-oloid-signature"] as string;
-  if (!verifyWebhook(req.rawBody, sig, process.env.OLOID_WEBHOOK_SECRET!)) {
+app.post("/webhooks/vecminds", (req, res) => {
+  const sig = req.headers["x-vecminds-signature"] as string;
+  if (!verifyWebhook(req.rawBody, sig, process.env.VECMINDS_WEBHOOK_SECRET!)) {
     return res.status(401).send("Invalid signature");
   }
   const { event, data } = req.body;
@@ -727,8 +727,8 @@ app.post("/webhooks/oloid", (req, res) => {
           <section id="policy-dsl" data-ds style={{ marginTop: 52 }}>
             <h1 className="docs-h1">Policy DSL</h1>
             <p className="docs-section-intro">
-              Policies are versioned YAML files that control how Oloid processes a document package.
-              Standard policies are maintained by Oloid. Custom policies are authored by your team and
+              Policies are versioned YAML files that control how Vecminds processes a document package.
+              Standard policies are maintained by Vecminds. Custom policies are authored by your team and
               uploaded via the dashboard or API.
             </p>
             <h2 className="docs-h2">Full policy reference</h2>
@@ -781,9 +781,9 @@ output:
               authentication, retries, base64 encoding, and webhook signature verification automatically.
             </p>
             <h2 className="docs-h2">TypeScript / JavaScript</h2>
-            <Pre lang="TypeScript">{`import { OloidClient } from "@oloid/intelligence";
+            <Pre lang="TypeScript">{`import { VecmindsClient } from "@vecminds/intelligence";
 
-const client = new OloidClient({ apiKey: process.env.OLOID_API_KEY });
+const client = new VecmindsClient({ apiKey: process.env.VECMINDS_API_KEY });
 
 // Submit and wait (sync mode)
 const result = await client.verify.create({
@@ -803,10 +803,10 @@ await client.outcomes.tag({
 // Fetch audit trail
 const audit = await client.audit.get(result.audit_id);`}</Pre>
             <h2 className="docs-h2">Python</h2>
-            <Pre lang="Python">{`from oloid import OloidClient
+            <Pre lang="Python">{`from vecminds import VecmindsClient
 import os
 
-client = OloidClient(api_key=os.environ["OLOID_API_KEY"])
+client = VecmindsClient(api_key=os.environ["VECMINDS_API_KEY"])
 
 with open("pay_stub_aug.pdf", "rb") as f:
     job = client.verify.create(
@@ -829,14 +829,14 @@ client.outcomes.tag(job_id=job.id, outcome="repaid", months_to_outcome=24)`}</Pr
           <section id="security" data-ds style={{ marginTop: 52 }}>
             <h1 className="docs-h1">Security &amp; Compliance</h1>
             <p className="docs-section-intro">
-              Oloid is designed to run entirely inside your infrastructure. In VPC and on-prem deployments,
+              Vecminds is designed to run entirely inside your infrastructure. In VPC and on-prem deployments,
               borrower documents never leave your network.
             </p>
             <h2 className="docs-h2">Deployment options</h2>
             <Params rows={[
-              { name: "VPC deployment", type: "option", req: false, desc: "Oloid runs in a dedicated VPC in your cloud account (AWS, Azure, GCP). All traffic stays within your network perimeter. Recommended for regulated lenders." },
+              { name: "VPC deployment", type: "option", req: false, desc: "Vecminds runs in a dedicated VPC in your cloud account (AWS, Azure, GCP). All traffic stays within your network perimeter. Recommended for regulated lenders." },
               { name: "On-premise", type: "option", req: false, desc: "Fully air-gapped. Documents never traverse external networks. Required for some core banking environments." },
-              { name: "Private cloud", type: "option", req: false, desc: "Oloid-managed infrastructure in a region-locked private cloud. Data residency guaranteed by contract." },
+              { name: "Private cloud", type: "option", req: false, desc: "Vecminds-managed infrastructure in a region-locked private cloud. Data residency guaranteed by contract." },
             ]} />
             <h2 className="docs-h2">Certifications</h2>
             <div className="docs-cards-2">
@@ -857,7 +857,7 @@ client.outcomes.tag(job_id=job.id, outcome="repaid", months_to_outcome=24)`}</Pr
               <li>Documents are encrypted at rest (AES-256) and in transit (TLS 1.3).</li>
               <li>Document content is deleted from the processing environment within 24 hours of job completion (configurable).</li>
               <li>Audit records are retained immutably for 7 years by default.</li>
-              <li>API keys are hashed before storage — Oloid cannot retrieve a plaintext key after issuance.</li>
+              <li>API keys are hashed before storage — Vecminds cannot retrieve a plaintext key after issuance.</li>
               <li><strong>Customer outcome data is never used to train shared models.</strong> The flywheel is per-customer and fully isolated.</li>
             </ul>
           </section>
@@ -878,7 +878,7 @@ client.outcomes.tag(job_id=job.id, outcome="repaid", months_to_outcome=24)`}</Pr
               <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 10, color: "var(--fg)" }}>Get in touch</div>
               <p className="docs-p" style={{ margin: 0 }}>
                 For integration questions, reach your solutions engineer via Slack Connect or email{" "}
-                <a href="mailto:integrations@oloid.ai" style={{ color: "var(--signal)" }}>integrations@oloid.ai</a>.
+                <a href="mailto:integrations@vecminds.ai" style={{ color: "var(--signal)" }}>integrations@vecminds.ai</a>.
                 For urgent production issues, prefix your Slack message with{" "}
                 <IC>/urgent</IC> to trigger the on-call escalation.
               </p>
