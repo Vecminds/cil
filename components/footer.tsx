@@ -5,7 +5,8 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <div className="nav-logo">
-              <span className="mark" aria-hidden="true" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/Vecminds_Logo-icon--dark.png" className="logo-mark" alt="" aria-hidden="true" />
               Vecminds Intelligence
             </div>
             <p>The document intelligence layer for lenders. Verified files in minutes. Every step auditable.</p>
@@ -33,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="foot-bottom">
-          <span>© 2026 Vecminds Intelligence, Inc.</span>
+          <span>© 2026 Credit Intelligence by <a href="https://www.vecminds.com">Vecminds Technologies Pvt. Ltd.</a></span>
           <span>SOC 2 Type II · ISO 27001 · GDPR</span>
         </div>
       </div>

@@ -863,6 +863,19 @@ footer {
     linear-gradient(90deg, transparent 49.5%, #0b0b0c 49.5% 50.5%, transparent 50.5%);
 }
 
+/* Logo icon — removes white PNG background in each theme */
+.logo-mark {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  display: block;
+  object-fit: contain;
+  mix-blend-mode: multiply;   /* white bg vanishes on light surfaces */
+}
+[data-theme="dark"] .logo-mark {
+  filter: invert(1);
+  mix-blend-mode: screen;     /* black bg (post-invert) vanishes on dark surfaces */
+}
+
 [data-theme="dark"] .step .n { background: var(--bg); }
 
 /* ---------- Tweaks panel ---------- */

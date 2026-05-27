@@ -20,7 +20,8 @@ export default function Nav() {
     <nav className={`nav${scrolled ? " scrolled" : ""}`}>
       <div className="container nav-inner">
         <a href="#" className="nav-logo">
-          <span className="mark" aria-hidden="true" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/Vecminds_Logo-icon--dark.png" className="logo-mark" alt="" aria-hidden="true" />
           Vecminds Intelligence
         </a>
         <div className="nav-links">
@@ -40,9 +41,9 @@ export default function Nav() {
           >
             {t.theme === "dark" ? <Sun /> : <Moon />}
           </button>
-          <a href="#" className="btn ghost" style={{ fontSize: 14 }}>
+          {/* <a href="#" className="btn ghost" style={{ fontSize: 14 }}>
             Sign in
-          </a>
+          </a> */}
           <CalButton className="btn primary">
             Book a demo <Arrow className="arrow" />
           </CalButton>

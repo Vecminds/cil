@@ -121,7 +121,8 @@ export default function DocsPage() {
       <header className="docs-topbar">
         <div className="docs-topbar-inner">
           <Link href="/" className="docs-brand">
-            <span className="mark" aria-hidden="true" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/Vecminds_Logo-icon--dark.png" className="logo-mark" alt="" aria-hidden="true" />
             Vecminds Intelligence
             <span className="docs-sep">/</span>
             <span className="docs-breadcrumb">Docs</span>
